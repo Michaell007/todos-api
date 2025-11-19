@@ -18,6 +18,8 @@ const createTodo = (req, res) => {
   const { title } = req.body;
   if (!title) return res.status(400).json({ message: "Le champ title est requis" });
 
+  let nextId = 5
+
   const newTodo = {
     id: nextId++,
     title,

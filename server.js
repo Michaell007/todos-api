@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const todoRoutes = require('./routes/todos');
 
 const app = express();
@@ -6,6 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 // Route de base
 app.get('/docs', (req, res) => {
